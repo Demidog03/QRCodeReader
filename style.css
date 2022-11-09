@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /**to avoid width or height changing were adding padding or border*/
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;    /*minimum height of body will be 100% of viewpoint*/
+    background-color: #E6E5A3   ;
+}
+
+.material-symbols-outlined {
+
+    font-variation-settings:
+            'FILL' 1,
+            'wght' 500,
+            'GRAD' 0,
+            'opsz' 48
+}
+
+.wrapper{
+    height: 270px;
+    width: 420px;
+    border-radius: 7px;
+    background-color: #A9AF7E;
+    padding: 30px 30px 35px;
+    transition: height 0.2s ease;
+}
+
+.wrapper.active {
+    height: 525px;
+}
+
+.wrapper form{
+    height: 210px;
+    cursor: pointer;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 7px;
+    transition: height 0.2s ease;
+}
+
+.wrapper.active form{
+    height: 225px;
+    pointer-events: none;
+}
+
+.wrapper.active form img{
+    display: block;
+}
+
+.wrapper.active form .content{
+    display: none;
+}
+
+.wrapper img{
+    display: none;
+    max-width: 200px;
+}
+
+form .content{
+    /*display: none;*/
+}
+form .content span{
+    font-size: 55px;
+
+}
+form .content h1{
+    font-size: 25px;
+    margin-top: 15px;
+}
+
+.wrapper .details{
+    margin-top: 25px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.wrapper.active .details{
+    opacity: 1;
+    pointer-events: auto;
+    transition: opacity 0.5s 0.1s ease;
+}
+
+.details textarea{
+    width: 100%;
+    height: 128px;
+    background: none;
+    outline: none;
+    padding: 10px 15px;
+    border: 1px solid white;
+    border-radius: 5px;
+    color: white;
+    font-size: 18px;
+}
+
+.details .buttons{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    position: relative;
+}
+
+.buttons button{
+    height: 55px;
+    outline: none;
+    border: none;
+    background: #557153;
+    color: white;
+    width: calc(100% / 2 - 10px);
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.buttons .copyHint{
+    background-color: white;
+    color: black;
+    font-weight: 400;
+    width: 20%;
+    text-align: center;
+    right: -5px;
+    opacity: 0;
+    top: -15px;
+    position: absolute;
+    transition: opacity 1s ease-in;
+    animation: none;
+    font-weight: 500;
+}
+
+@keyframes append-animate {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes disappear-animate {
+    from {
+        transform: scale(1);
+        opacity: 1;
+    }
+    to {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+
